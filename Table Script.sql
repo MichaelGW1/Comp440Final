@@ -60,7 +60,7 @@ GO
 CREATE TABLE [dbo].[features] (
 	[ID]					INT 						NOT NULL,
 	[releaseDate]			DATE 						NOT NULL,
-	[deprecated]			BOOLEAN						NOT NULL,
+	[deprecated]			TINYINT						NOT NULL,
 	[parentID]				INT 						NOT NULL,
 	[description]			TEXT						NULL,
 	[depeartment]			VARCHAR						NOT NULL,
@@ -79,7 +79,7 @@ CREATE TABLE [dbo].[product] (
 	[ID]					INT 						NOT NULL,
 	[productVersion]		INT 						NOT NULL,
 	[releaseDate]			DATE 						NOT NULL,
-	[approved]				BOOLEAN						NOT NULL,
+	[approved]				TINYINT						NOT NULL,
 	[projectManagerID]		INT 						NOT NULL
 );
 
@@ -89,7 +89,7 @@ ADD
 	CONSTRAINT [PK_product] PRIMARY KEY CLUSTERED ([ID] ASC);
 
 --Release Scope
-DROP TABLE IF EXSITS [dbo].[releaseScope]
+DROP TABLE IF EXISTS [dbo].[releaseScope]
 GO
 CREATE TABLE [dbo].[releaseScope] (
 	[ID]					INT 						NOT NULL,
@@ -111,7 +111,7 @@ CREATE TABLE [dbo].[ticket] (
 	[type]					VARCHAR	 					NOT NULL,
 	[productManagerID]		INT 						NOT NULL,
 	[priority]				INT 						NOT NULL,
-	[approved]				BOOLEAN						NOT NULL,
+	[approved]				TINYINT 					NOT NULL,
 	[description]			TEXT						NULL,
 	[state]					VARCHAR						NOT NULL,
 	[ticketCreationDate]	DATETIME					NOT NULL,
